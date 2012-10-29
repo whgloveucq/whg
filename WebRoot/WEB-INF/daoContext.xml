@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Spring配置文件的DTD信息 -->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+	"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- 配置daoTemplate，作为所有DAO组件的模板 -->
+	<bean id="daoTemplate" abstract="true">
+		<!-- 为DAO组件注入SessionFactory引用 -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- 配置UserDao组件 -->
+	<bean id="UserDao" parent="daoTemplate"
+		class="whg.dao.impl.UserDaoHibernate"/>
+	<!-- 配置BulletinDao组件 -->
+	<bean id="BulletinDao" parent="daoTemplate"
+		class="whg.dao.impl.BulletinDaoHibernate"/>	
+</beans>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<constant name="struts.custom.i18n.resources"
+		value="messageResource"/>
+	<constant name="struts.i18n.encoding" value="GBK"/>
+
+	<package name="whg" extends="struts-default">
+
+		
+		<!-- 将自定义的拦截器栈定义成默认拦截器栈 -->
+	
+
+		<global-results>
+			<!-- 下面定义的结果对所有的Action都有效 -->
+			<result name="login">/WEB-INF/jsp/login.jsp</result>
+			<result name="exception">/WEB-INF/jsp/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<!-- 指Action抛出AuctionException异常时，转入名为exception的结果。 -->
+			<exception-mapping exception="whg.exception.AuctionException" result="exception"/>
+			<!-- 指Action抛出Exception异常时，转入名为exception的结果。 -->
+			<exception-mapping exception="java.lang.Exception" result="exception"/>
+		</global-exception-mappings>
+
+
+<!--		<action name="index">-->
+<!--			<result name="success">/WEB-INF/jsp/welcome.jsp</result>-->
+<!--		</action>-->
+
+		
+
+		<!-- 配置处理用户登录的Action -->
+		<action name="login" class="whg.action.LoginAction">
+			<!-- 配置处理用户登录后的Result -->
+			<result name="input">/WEB-INF/login.jsp</result> 
+			<result name="success">/WEB-INF/jsp/welcome.jsp</result>
+			<result name="failure">/WEB-INF/jsp/error.jsp</result>
+			<!-- 显式引用系统默认拦截器栈 -->
+		<interceptor-ref name="defaultStack"/>
+		</action>
+
+
+	
+	</package> 
+
+</struts>
