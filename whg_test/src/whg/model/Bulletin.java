@@ -10,7 +10,7 @@ public class Bulletin {
 	Integer id;
 	String title ;
 	String  content;
-	Integer authid;
+	String authid;
 	String appendix;
 	public Integer getId() {
 		return id;
@@ -30,10 +30,10 @@ public class Bulletin {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Integer getAuthid() {
+	public String getAuthid() {
 		return authid;
 	}
-	public void setAuthid(Integer authid) {
+	public void setAuthid(String  authid) {
 		this.authid = authid;
 	}
 	public String getAppendix() {

@@ -16,8 +16,48 @@ Date:
 <head>
 <title>…Ã“µ≈ƒ¬ÙJava EE≥Ã–ÚøÚº‹</title>
 </head>
-<body>
-welcome
-<s:property value="userid"/>
+<body> 
+<br />
+welcome, 
+<%--<s:property value="userid"/>--%>
+${sessionScope.userid} 
+
+<div>
+<s:form action="AddBulletin" method="">
+<table align="left" border="1">
+<tr >
+<td></td>
+<td>
+<s:text name="Title" property="title"  />
+</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><s:text name="Content" property="content" size="" /></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><s:file name="upload" property="appendix" /></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><s:submit /></td>
+<td></td>
+</tr>
+
+</table>
+
+<br/>
+
+</s:form>
+
+
+</div>
+
+
+
 </body>
 </html>

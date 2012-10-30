@@ -16,7 +16,7 @@
         <property name="content" type="java.lang.String">
             <column name="Content" length="65535" />
         </property>
-        <property name="authid" type="java.lang.Integer">
+        <property name="authid" type="java.lang.String">
             <column name="Authid" />
         </property>
         <property name="appendix" type="java.lang.String">
