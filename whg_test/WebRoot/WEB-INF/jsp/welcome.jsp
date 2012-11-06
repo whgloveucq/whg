@@ -10,6 +10,7 @@ Date:
 
 <%@ page contentType="text/html; charset=GBK" language="java" errorPage="" %>
 <%@taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,43 +20,30 @@ Date:
 <body> 
 <br />
 welcome, 
-<%--<s:property value="userid"/>--%>
+<%--<html:property value="userid"/>--%>
 ${sessionScope.userid} 
 
-<div>
-<s:form action="AddBulletin" method="">
-<table align="left" border="1">
-<tr >
-<td></td>
-<td>
-<s:text name="Title" property="title"  />
-</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><s:text name="Content" property="content" size="" /></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><s:file name="upload" property="appendix" /></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><s:submit /></td>
-<td></td>
-</tr>
 
-</table>
 
-<br/>
-
+<Table>
+	<Tr>
+		<td>
+<div align="center">
+<s:actionerror cssClass="error"/>
+<s:form action="addbulletin" method="post">
+	<s:textfield name="Title"  label="标题" property="title"/>
+	<s:textfield name="Contenet" label="内容"/>
+	<s:textfield name="Appendix" label="附件"/>
+	<s:submit value="提交"/>
 </s:form>
-
-
+ <%-- 验证码：<img name="d" src="authImg.jpg"> --%>
 </div>
+
+
+</Td>
+	</Tr>
+</Table> 
+
 
 
 

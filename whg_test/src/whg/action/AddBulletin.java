@@ -14,6 +14,8 @@ public class AddBulletin extends BaseAction {
 	private String authid;
 	private BulletinDao bulletindao ;
 	private Bulletin bulletin ;
+	public AddBulletin()
+	{  ;}
 	public String getTitle() {
 		return title;
 	}
@@ -52,6 +54,7 @@ public class AddBulletin extends BaseAction {
 	public void setBulletindao(BulletinDao bulletindao) {
 		this.bulletindao = bulletindao;
 	}
+	
 	
 	public String execute() throws Exception
 	{

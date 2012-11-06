@@ -43,6 +43,14 @@
 			<!-- 显式引用系统默认拦截器栈 -->
 		<interceptor-ref name="defaultStack"/>
 		</action>
+		<action name="addbulletin" class="whg.action.AddbulletinAction">
+			<!-- 配置处理用户登录后的Result -->
+			<result name="input">/WEB-INF/login.jsp</result> 
+			<result name="success">/WEB-INF/jsp/welcome.jsp</result>
+			<result name="failure">/WEB-INF/jsp/error.jsp</result>
+			<!-- 显式引用系统默认拦截器栈 -->
+		<interceptor-ref name="defaultStack"/>
+		</action>
 
 
 	
